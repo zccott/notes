@@ -1,4 +1,6 @@
-$keep = @("main", "development", "release/release-2.1")
+#delate git branches powersell script
+
+$keep = @("main", "development")
 git branch | ForEach-Object {
     $branch = $_.Trim().Replace("* ", "")
     if ($keep -notcontains $branch) {
