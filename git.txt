@@ -1,0 +1,7 @@
+$keep = @("main", "development", "release/release-2.1")
+git branch | ForEach-Object {
+    $branch = $_.Trim().Replace("* ", "")
+    if ($keep -notcontains $branch) {
+        git branch -D $branch
+    }
+}
